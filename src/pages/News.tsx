@@ -24,14 +24,14 @@ const News = () => {
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="News & Announcements"
-        subtitle="Stay updated with the latest news from our community"
+        title="Новости и объявления"
+        subtitle="Будьте в курсе последних новостей нашего сообщества"
         backgroundImage="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
       />
       
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <SectionHeader title="Latest Articles" />
+          <SectionHeader title="Последние статьи" />
           
           {/* Search & Filter */}
           <div className="mb-10 max-w-4xl mx-auto">
@@ -39,7 +39,7 @@ const News = () => {
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input 
-                  placeholder="Search news articles..." 
+                  placeholder="Поиск новостей..." 
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -50,7 +50,7 @@ const News = () => {
                   variant={selectedCategory === "" ? "default" : "outline"} 
                   onClick={() => setSelectedCategory("")}
                 >
-                  All
+                  Все
                 </Button>
                 {categories.map(category => (
                   <Button 
@@ -74,13 +74,13 @@ const News = () => {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">No news articles found matching your search criteria.</p>
+              <p className="text-xl text-muted-foreground">Не найдено новостей, соответствующих вашим критериям поиска.</p>
               <Button 
                 variant="outline" 
                 onClick={() => {setSearchTerm(""); setSelectedCategory("");}} 
                 className="mt-4"
               >
-                Clear Filters
+                Очистить фильтры
               </Button>
             </div>
           )}

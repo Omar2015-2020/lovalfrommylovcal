@@ -17,14 +17,14 @@ const Events = () => {
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Events Calendar"
-        subtitle="Join us for community gatherings, cultural celebrations, and educational workshops"
+        title="Календарь событий"
+        subtitle="Присоединяйтесь к нам на общественных собраниях, культурных праздниках и образовательных семинарах"
         backgroundImage="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
       />
       
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <SectionHeader title="Upcoming Events" />
+          <SectionHeader title="Предстоящие события" />
           
           {/* Calendar Filter */}
           <div className="mb-10 max-w-sm mx-auto">
@@ -36,7 +36,7 @@ const Events = () => {
                     className="w-full justify-start text-left font-normal"
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {date ? format(date, "PPP") : "Filter by date"}
+                    {date ? format(date, "PPP") : "Фильтр по дате"}
                     {date && (
                       <Button
                         variant="ghost"
@@ -75,16 +75,16 @@ const Events = () => {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-4">Community Calendar</h3>
+                  <h3 className="text-2xl font-bold mb-4">Общественный календарь</h3>
                   <p className="text-muted-foreground mb-6">
-                    View our full calendar of events and add it to your personal calendar to stay updated.
+                    Просмотрите наш полный календарь событий и добавьте его в свой личный календарь, чтобы быть в курсе.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <Button className="bg-russia-blue hover:bg-russia-blue/90">
-                      View Full Calendar
+                      Просмотреть полный календарь
                     </Button>
                     <Button variant="outline">
-                      Add to Your Calendar
+                      Добавить в свой календарь
                     </Button>
                   </div>
                 </div>

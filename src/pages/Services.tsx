@@ -12,16 +12,16 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Student Services"
-        subtitle="Resources and support for Yemeni students and community members in Russia"
+        title="Услуги для студентов"
+        subtitle="Ресурсы и поддержка для йеменских студентов и членов сообщества в России"
         backgroundImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
       />
       
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Our Services" 
-            subtitle="We provide a range of services to support our community members during their time in Russia"
+            title="Наши услуги" 
+            subtitle="Мы предоставляем широкий спектр услуг для поддержки членов нашего сообщества во время их пребывания в России"
           />
           
           {/* Services Grid */}
@@ -37,8 +37,8 @@ const Services = () => {
       <section className="py-16 px-4 bg-muted/30 hero-pattern">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Digital Library" 
-            subtitle="Download helpful resources for students and community members"
+            title="Цифровая библиотека" 
+            subtitle="Скачайте полезные ресурсы для студентов и членов сообщества"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -46,11 +46,11 @@ const Services = () => {
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <FileText className="h-12 w-12 mb-4 text-yemen-red" />
-                  <h3 className="text-lg font-bold mb-2">Student Guide to Russian Universities</h3>
-                  <p className="text-muted-foreground mb-4">Comprehensive guide for Yemeni students studying in Russian universities.</p>
+                  <h3 className="text-lg font-bold mb-2">Руководство для студентов в российских университетах</h3>
+                  <p className="text-muted-foreground mb-4">Подробное руководство для йеменских студентов, обучающихся в российских университетах.</p>
                   <Button className="w-full gap-2">
                     <FileDown className="h-4 w-4" />
-                    Download PDF
+                    Скачать PDF
                   </Button>
                 </div>
               </CardContent>
@@ -60,11 +60,11 @@ const Services = () => {
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <FileText className="h-12 w-12 mb-4 text-yemen-red" />
-                  <h3 className="text-lg font-bold mb-2">Visa Application Templates</h3>
-                  <p className="text-muted-foreground mb-4">Templates and sample documents for visa applications and extensions.</p>
+                  <h3 className="text-lg font-bold mb-2">Шаблоны для оформления визы</h3>
+                  <p className="text-muted-foreground mb-4">Шаблоны и образцы документов для оформления визы и её продления.</p>
                   <Button className="w-full gap-2">
                     <FileDown className="h-4 w-4" />
-                    Download PDF
+                    Скачать PDF
                   </Button>
                 </div>
               </CardContent>
@@ -74,11 +74,11 @@ const Services = () => {
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center">
                   <FileText className="h-12 w-12 mb-4 text-yemen-red" />
-                  <h3 className="text-lg font-bold mb-2">Housing Contract Guide</h3>
-                  <p className="text-muted-foreground mb-4">Guide to understanding Russian rental agreements and housing regulations.</p>
+                  <h3 className="text-lg font-bold mb-2">Руководство по договорам аренды жилья</h3>
+                  <p className="text-muted-foreground mb-4">Руководство по пониманию российских договоров аренды и жилищных правил.</p>
                   <Button className="w-full gap-2">
                     <FileDown className="h-4 w-4" />
-                    Download PDF
+                    Скачать PDF
                   </Button>
                 </div>
               </CardContent>
@@ -88,7 +88,7 @@ const Services = () => {
           <div className="mt-8 text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/services/library" className="flex items-center">
-                View All Resources
+                Просмотреть все ресурсы
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

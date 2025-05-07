@@ -24,14 +24,14 @@ const Directory = () => {
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Yemeni Directory in Russia"
-        subtitle="Discover Yemeni businesses, organizations, and resources across Russia"
+        title="Йеменский справочник в России"
+        subtitle="Найдите йеменские предприятия, организации и ресурсы по всей России"
         backgroundImage="https://images.unsplash.com/photo-1466721591366-2d5fba72006d"
       />
       
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <SectionHeader title="Community Directory" />
+          <SectionHeader title="Справочник сообщества" />
           
           {/* Search & Filter */}
           <div className="mb-10 max-w-4xl mx-auto">
@@ -39,7 +39,7 @@ const Directory = () => {
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input 
-                  placeholder="Search directory..." 
+                  placeholder="Поиск в справочнике..." 
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -50,7 +50,7 @@ const Directory = () => {
                   variant={selectedCategory === "" ? "default" : "outline"} 
                   onClick={() => setSelectedCategory("")}
                 >
-                  All
+                  Все
                 </Button>
                 {categories.map(category => (
                   <Button 
@@ -74,13 +74,13 @@ const Directory = () => {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">No directory listings found matching your search criteria.</p>
+              <p className="text-xl text-muted-foreground">Объекты не найдены по заданным критериям поиска.</p>
               <Button 
                 variant="outline" 
                 onClick={() => {setSearchTerm(""); setSelectedCategory("");}} 
                 className="mt-4"
               >
-                Clear Filters
+                Очистить фильтры
               </Button>
             </div>
           )}
@@ -88,13 +88,13 @@ const Directory = () => {
           {/* Submit Listing */}
           <div className="mt-16 text-center">
             <div className="max-w-lg mx-auto">
-              <h3 className="text-xl font-bold mb-2">Add Your Listing</h3>
+              <h3 className="text-xl font-bold mb-2">Добавьте свою организацию</h3>
               <p className="text-muted-foreground mb-4">
-                Are you a Yemeni business or organization in Russia? Submit your listing to be included in our directory.
+                Вы йеменский бизнес или организация в России? Отправьте информацию о себе, чтобы быть включенным в наш справочник.
               </p>
               <Button className="bg-russia-blue hover:bg-russia-blue/90">
                 <Plus className="h-4 w-4 mr-2" />
-                Submit Listing
+                Добавить организацию
               </Button>
             </div>
           </div>

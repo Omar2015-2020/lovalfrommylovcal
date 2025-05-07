@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <HeroSection
-        title="Yemeni Community in Russia"
-        subtitle="Supporting Yemeni students, professionals and families across Russia"
-        ctaText="Explore Our Services"
+        title="Йеменское сообщество в России"
+        subtitle="Поддержка йеменских студентов, специалистов и семей по всей России"
+        ctaText="Изучить наши услуги"
         ctaLink="/services"
         backgroundImage="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e"
       />
@@ -24,18 +24,18 @@ const Home = () => {
       <section className="py-16 px-4 bg-muted/30 hero-pattern">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Welcome to Our Community</h2>
+            <h2 className="text-3xl font-bold mb-6">Добро пожаловать в наше сообщество</h2>
             <p className="text-lg mb-6">
-              The Yemeni Community in Russia serves as a bridge between cultures, supporting Yemeni students, 
-              professionals, and families throughout their stay in Russia. We provide resources, organize events, 
-              and foster connections to help our community thrive.
+              Йеменское сообщество в России служит мостом между культурами, поддерживая йеменских студентов, 
+              профессионалов и семьи во время их пребывания в России. Мы предоставляем ресурсы, организуем мероприятия 
+              и способствуем связям, чтобы помочь нашему сообществу процветать.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild className="bg-yemen-red hover:bg-yemen-red/90">
-                <Link to="/about">About Us</Link>
+                <Link to="/about">О нас</Link>
               </Button>
               <Button asChild variant="outline">
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">Связаться с нами</Link>
               </Button>
             </div>
           </div>
@@ -46,8 +46,8 @@ const Home = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Latest News" 
-            subtitle="Stay updated with the latest announcements and articles from our community"
+            title="Последние новости" 
+            subtitle="Будьте в курсе последних объявлений и статей нашего сообщества"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {newsData.map((news) => (
@@ -57,7 +57,7 @@ const Home = () => {
           <div className="mt-10 text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/news" className="flex items-center">
-                View All News
+                Все новости
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -69,8 +69,8 @@ const Home = () => {
       <section className="py-16 px-4 bg-muted/30 hero-pattern">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Upcoming Events" 
-            subtitle="Join us for community gatherings, cultural celebrations, and educational workshops"
+            title="Предстоящие события" 
+            subtitle="Присоединяйтесь к нам на общественных собраниях, культурных праздниках и образовательных семинарах"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {eventsData.map((event) => (
@@ -80,7 +80,7 @@ const Home = () => {
           <div className="mt-10 text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/events" className="flex items-center">
-                View All Events
+                Все события
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -92,8 +92,8 @@ const Home = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeader 
-            title="Our Services" 
-            subtitle="Resources and support for the Yemeni community in Russia"
+            title="Наши услуги" 
+            subtitle="Ресурсы и поддержка для йеменского сообщества в России"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicesData.slice(0, 3).map((service) => (
@@ -103,7 +103,7 @@ const Home = () => {
           <div className="mt-10 text-center">
             <Button asChild variant="outline" className="group">
               <Link to="/services" className="flex items-center">
-                Explore All Services
+                Изучить все услуги
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -116,12 +116,12 @@ const Home = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col items-center text-center">
             <Mail className="h-12 w-12 mb-4 text-gold" />
-            <h2 className="text-3xl font-bold mb-4">Stay Connected</h2>
+            <h2 className="text-3xl font-bold mb-4">Оставайтесь на связи</h2>
             <p className="mb-8 max-w-lg">
-              Join our community newsletter to receive updates about events, opportunities, and important announcements.
+              Присоединяйтесь к нашей рассылке, чтобы получать обновления о мероприятиях, возможностях и важных объявлениях.
             </p>
             <Button asChild className="bg-yemen-red hover:bg-yemen-red/90 text-white">
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contact">Связаться с нами</Link>
             </Button>
           </div>
         </div>

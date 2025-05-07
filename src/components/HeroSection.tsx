@@ -13,7 +13,7 @@ interface HeroSectionProps {
 const HeroSection = ({ 
   title, 
   subtitle, 
-  ctaText = "Learn More", 
+  ctaText = "Узнать больше", 
   ctaLink = "/about",
   backgroundImage = "/placeholder.svg" 
 }: HeroSectionProps) => {

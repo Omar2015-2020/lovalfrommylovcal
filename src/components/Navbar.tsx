@@ -9,13 +9,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "News", path: "/news" },
-    { name: "Events", path: "/events" },
-    { name: "Student Services", path: "/services" },
-    { name: "Community Directory", path: "/directory" },
-    { name: "Contact", path: "/contact" }
+    { name: "Главная", path: "/" },
+    { name: "О нас", path: "/about" },
+    { name: "Новости", path: "/news" },
+    { name: "События", path: "/events" },
+    { name: "Услуги студентам", path: "/services" },
+    { name: "Справочник сообщества", path: "/directory" },
+    { name: "Контакты", path: "/contact" }
   ];
 
   return (
@@ -28,10 +28,10 @@ const Navbar = () => {
             <div className="bg-black w-4 h-8 rounded-sm"></div>
           </div>
           <span className="font-amiri text-xl font-bold hidden sm:inline">
-            Yemeni Community in Russia
+            Йеменское сообщество в России
           </span>
           <span className="font-amiri text-xl font-bold sm:hidden">
-            YCR
+            ЙСР
           </span>
         </Link>
 
@@ -48,14 +48,14 @@ const Navbar = () => {
           ))}
           <Button className="bg-russia-blue hover:bg-russia-blue/90 font-medium flex items-center gap-1">
             <Globe className="w-4 h-4 mr-1" />
-            <span>EN</span>
+            <span>РУ</span>
           </Button>
         </nav>
 
         {/* Mobile Nav */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menu">
+            <Button variant="ghost" size="icon" aria-label="Меню">
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
@@ -73,7 +73,7 @@ const Navbar = () => {
               ))}
               <Button className="bg-russia-blue hover:bg-russia-blue/90 font-medium mt-4 flex items-center gap-1">
                 <Globe className="w-4 h-4 mr-1" />
-                <span>EN</span>
+                <span>РУ</span>
               </Button>
             </nav>
           </SheetContent>

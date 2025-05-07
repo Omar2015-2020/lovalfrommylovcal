@@ -31,7 +31,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button asChild variant="outline" className="w-full">
-          <Link to={service.link}>Learn More</Link>
+          <Link to={service.link}>Подробнее</Link>
         </Button>
       </CardFooter>
     </Card>

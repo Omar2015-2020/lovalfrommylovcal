@@ -50,7 +50,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="text-gold" size={18} />
-                <span>+7 (123) 456-7890</span>
+                <span>+7 (985) 771-16-98</span>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="text-gold" size={18} />
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm text-white/70">
-          <p>© {currentYear} Йеменское сообщество в России. Все права защищены.</p>
+          <p>© {currentYear} Йеменское сообщество в России. Все права защищены.made by Omar Almughalles</p>
         </div>
       </div>
     </footer>

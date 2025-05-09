@@ -26,7 +26,7 @@ const News = () => {
       <HeroSection
         title="Новости и объявления"
         subtitle="Будьте в курсе последних новостей нашего сообщества"
-        backgroundImage="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+        backgroundImage="public/Images/news.png"
       />
       
       <section className="py-16 px-4">

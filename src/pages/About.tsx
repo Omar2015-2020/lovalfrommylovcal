@@ -10,7 +10,7 @@ const About = () => {
       <HeroSection
         title="О нашем сообществе"
         subtitle="Узнайте о нашей истории, миссии и людях, стоящих за Йеменским сообществом в России"
-        backgroundImage="https://images.unsplash.com/photo-1466442929976-97f336a657be"
+        backgroundImage="https://img1.akspic.ru/crops/5/0/8/7/87805/87805-shpil-zdanie-gorod-stolica-krasnaya_ploshhad-1920x1080.jpg"
       />
       
       {/* Mission and Vision */}

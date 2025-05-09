@@ -17,7 +17,7 @@ const Home = () => {
         subtitle="Поддержка йеменских студентов, специалистов и семей по всей России"
         ctaText="Изучить наши услуги"
         ctaLink="/services"
-        backgroundImage="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e"
+        backgroundImage="public/Images/hero.png"
       />
       
       {/* Welcome Section */}

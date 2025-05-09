@@ -48,10 +48,13 @@ const Services = () => {
                   <FileText className="h-12 w-12 mb-4 text-yemen-red" />
                   <h3 className="text-lg font-bold mb-2">Руководство для студентов в российских университетах</h3>
                   <p className="text-muted-foreground mb-4">Подробное руководство для йеменских студентов, обучающихся в российских университетах.</p>
+                  <a  className="w-full gap-2" href="/student_guide.pdf" download>
                   <Button className="w-full gap-2">
                     <FileDown className="h-4 w-4" />
                     Скачать PDF
                   </Button>
+                  </a>
+                  
                 </div>
               </CardContent>
             </Card>
@@ -62,10 +65,12 @@ const Services = () => {
                   <FileText className="h-12 w-12 mb-4 text-yemen-red" />
                   <h3 className="text-lg font-bold mb-2">Шаблоны для оформления визы</h3>
                   <p className="text-muted-foreground mb-4">Шаблоны и образцы документов для оформления визы и её продления.</p>
+                  <a  className="w-full gap-2" href="/визаваяанкита.pdf" download>
                   <Button className="w-full gap-2">
                     <FileDown className="h-4 w-4" />
                     Скачать PDF
                   </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

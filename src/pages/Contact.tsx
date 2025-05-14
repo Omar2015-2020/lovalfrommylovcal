@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
@@ -19,34 +18,56 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("http://localhost:8000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       toast({
         title: "Сообщение отправлено",
         description: "Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время.",
       });
-      
+
       setFormData({
         name: "",
         email: "",
         subject: "",
-        message: ""
+        message: "",
       });
-      
-      setIsSubmitting(false);
-    }, 1500);
-  };
-  
+    } else {
+      const data = await response.json();
+      toast({
+        title: "Ошибка",
+        description: data.message || "Произошла ошибка при отправке сообщения.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Ошибка сети",
+      description: "Не удалось соединиться с сервером. Проверьте подключение.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   return (
     <div className="min-h-screen">
       <HeroSection
@@ -54,18 +75,18 @@ const Contact = () => {
         subtitle="Свяжитесь с Йеменским сообществом в России"
         backgroundImage="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
       />
-      
+
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeader title="Связаться с нами" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
             {/* Contact Info */}
             <div className="lg:col-span-1">
               <Card className="h-full">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-6">Контактная информация</h3>
-                  
+
                   <div className="space-y-6">
                     <div className="flex items-start">
                       <div className="bg-muted rounded-full p-2 mr-4">
@@ -76,7 +97,7 @@ const Contact = () => {
                         <p className="text-muted-foreground">Центральный офис, Москва, Российская Федерация</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="bg-muted rounded-full p-2 mr-4">
                         <Phone className="h-5 w-5 text-yemen-red" />
@@ -86,7 +107,7 @@ const Contact = () => {
                         <p className="text-muted-foreground">+7 (985) 771-16-98</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="bg-muted rounded-full p-2 mr-4">
                         <Mail className="h-5 w-5 text-yemen-red" />
@@ -96,7 +117,7 @@ const Contact = () => {
                         <p className="text-muted-foreground">info@yemeni-russia.org</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="bg-muted rounded-full p-2 mr-4">
                         <Clock className="h-5 w-5 text-yemen-red" />
@@ -110,13 +131,13 @@ const Contact = () => {
                 </CardContent>
               </Card>
             </div>
-            
+
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <Card>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-6">Отправить нам сообщение</h3>
-                  
+
                   <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div className="space-y-2">
@@ -143,7 +164,7 @@ const Contact = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2 mb-4">
                       <Label htmlFor="subject">Тема</Label>
                       <Input
@@ -155,7 +176,7 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="space-y-2 mb-6">
                       <Label htmlFor="message">Сообщение</Label>
                       <Textarea
@@ -168,10 +189,10 @@ const Contact = () => {
                         required
                       />
                     </div>
-                    
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-russia-blue hover:bg-russia-blue/90" 
+
+                    <Button
+                      type="submit"
+                      className="w-full bg-russia-blue hover:bg-russia-blue/90"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? "Отправка..." : "Отправить сообщение"}
@@ -181,7 +202,7 @@ const Contact = () => {
               </Card>
             </div>
           </div>
-          
+
           {/* Membership Registration */}
           <div className="mt-16">
             <Card>

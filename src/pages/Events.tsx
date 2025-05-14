@@ -1,9 +1,7 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import EventCard from "@/components/EventCard";
-import { eventsData } from "@/data/mockData";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -12,8 +10,24 @@ import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
 const Events = () => {
+  const [eventsData, setEventsData] = useState([]);
   const [date, setDate] = useState<Date | undefined>(undefined);
-  
+
+  // Fetch events from API
+  useEffect(() => {
+    fetch("http://localhost:8000/api/events")
+      .then((res) => res.json())
+      .then((data) => setEventsData(data))
+      .catch((err) => console.error("Error fetching events:", err));
+  }, []);
+
+  // Filter events by selected date (optional)
+  const filteredEvents = date
+    ? eventsData.filter((event: any) =>
+        format(new Date(event.date), "yyyy-MM-dd") === format(date, "yyyy-MM-dd")
+      )
+    : eventsData;
+
   return (
     <div className="min-h-screen">
       <HeroSection
@@ -21,11 +35,11 @@ const Events = () => {
         subtitle="Присоединяйтесь к нам на общественных собраниях, культурных праздниках и образовательных семинарах"
         backgroundImage="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
       />
-      
+
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeader title="Предстоящие события" />
-          
+
           {/* Calendar Filter */}
           <div className="mb-10 max-w-sm mx-auto">
             <div className="flex items-center justify-center">
@@ -62,15 +76,21 @@ const Events = () => {
               </Popover>
             </div>
           </div>
-          
+
           {/* Events Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventsData.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
-          
-          {/* Add Community Calendar */}
+          {filteredEvents.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredEvents.map((event: any) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-muted-foreground mt-10">
+              Нет событий на выбранную дату.
+            </div>
+          )}
+
+          {/* Community Calendar Info */}
           <div className="mt-16">
             <Card>
               <CardContent className="p-6">
